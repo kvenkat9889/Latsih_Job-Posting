@@ -1,35 +1,28 @@
--- Create database
-CREATE DATABASE jobflow_db;
-
--- Connect to the database
-\c jobflow_db;
-
--- Create jobs table
-CREATE TABLE jobs (
+CREATE TABLE IF NOT EXISTS jobs (
     id SERIAL PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    department VARCHAR(100),
-    company VARCHAR(255) NOT NULL,
-    website VARCHAR(255),
-    job_type VARCHAR(50) NOT NULL,
-    experience_level VARCHAR(50) NOT NULL,
-    work_mode VARCHAR(50),
-    city VARCHAR(100) NOT NULL,
-    state VARCHAR(100),
-    country VARCHAR(100) NOT NULL,
-    currency VARCHAR(10),
+    title TEXT,
+    department TEXT,
+    company TEXT,
+    website TEXT,
+    job_type TEXT,
+    experience_level TEXT,
+    work_mode TEXT,
+    city TEXT,
+    state TEXT,
+    country TEXT,
+    currency TEXT,
     salary_from NUMERIC,
     salary_to NUMERIC,
-    salary_period VARCHAR(20),
+    salary_period TEXT,
     start_date DATE,
     deadline DATE,
-    job_summary TEXT NOT NULL,
+    job_summary TEXT,
     responsibilities TEXT,
     requirements TEXT,
     skills TEXT,
     benefits TEXT,
-    contact_email VARCHAR(255) NOT NULL,
-    contact_phone VARCHAR(20),
+    contact_email TEXT,
+    contact_phone TEXT,
     posted_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
