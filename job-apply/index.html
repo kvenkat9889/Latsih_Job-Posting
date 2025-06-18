@@ -997,7 +997,7 @@
 
         try {
             const response = await fetch(
-                `http://3.88.203.125:3115/api/jobs?page=${page}&limit=${jobsPerPage}&search=${encodeURIComponent(search)}`
+                `http://3.85.61.23:3010/api/jobs?page=${page}&limit=${jobsPerPage}&search=${encodeURIComponent(search)}`
             );
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -1077,7 +1077,7 @@
     // Function to fetch and show job details
     async function showJobDetails(jobId) {
         try {
-            const response = await fetch(`http://3.88.203.125:3115/api/jobs/${jobId}`);
+            const response = await fetch(`http://3.85.61.23:3010/api/jobs/${jobId}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
@@ -1150,7 +1150,7 @@
         }
 
         const id = jobId || currentJobData.id;
-	window.location.href = `http://3.88.203.125:8123/?jobId=${id}`;
+	window.location.href = `http://3.85.61.23:8006/?jobId=${id}`;
         // Placeholder: Redirect to application form or open application modal
         //:alert(`Redirecting to application page for ${currentJobData ? currentJobData.title : 'job ID ' + id} at ${currentJobData ? currentJobData.company : ''}...`);
         // TODO: Implement actual application form/modal and API call to /api/applications
@@ -1162,7 +1162,7 @@
             resume: 'Resume content or URL' // Replace with file upload or input
         };
         try {
-            const response = await fetch('http://3.88.203.125:3115/api/applications', {
+            const response = await fetch('http://3.85.61.23:3010/api/applications', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(applicationData)
@@ -1194,7 +1194,7 @@
             userId: 'user123' // Replace with actual user ID from authentication
         };
         try {
-            const response = await fetch('http://3.88.203.125:3115/api/favorites', {
+            const response = await fetch('http://3.85.61.23:3010/api/favorites', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(favoriteData)
